@@ -8,12 +8,15 @@
 ///    - Модули высокого уровня не должны зависеть от модулей низкого уровня
 ///    - Оба должны зависеть от абстракций
 abstract class LocalStorageRepository {
-  Future<bool> getIsFirstLaunch();
+  /// Флаг завершения онбординга (SharedPreferences)
+  Future<bool> getBoardingCompleted();
 
-  Future<String?> getAuthToken();
+  /// Токен доступа (FlutterSecureStorage)
+  Future<String?> getToken();
 
-  Future<bool> getIsGuest();
+  /// Установить флаг онбординга
+  Future<void> setBoardingCompleted(bool completed);
 
-  // Пример добавления нового метода:
-  // Future<void> saveUserProfile(UserProfile profile);
+  /// Сохранить или удалить токен (если null или пусто — удалить)
+  Future<void> setToken(String? token);
 }

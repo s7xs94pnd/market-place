@@ -1,8 +1,10 @@
-// lib/app/router.dart
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../core/navigation/route_paths.dart';
-import '../features/splash/splash_screen.dart';
+import 'package:kazan/core/constants/route_paths.dart';
+import 'package:kazan/features/splash/splash_screen.dart';
+import 'package:kazan/features/onboarding/onboarding_screen.dart';
+import 'package:kazan/features/auth/login_screen.dart';
+import 'package:kazan/features/home/main_screen.dart';
 
 /// Конфигурация маршрутизации приложения
 ///
@@ -26,6 +28,21 @@ GoRouter createRouter(GlobalKey<NavigatorState> navigatorKey) {
         path: RoutePaths.splash,
         pageBuilder: (context, state) =>
             const MaterialPage(child: SplashScreen()),
+      ),
+      GoRoute(
+        path: RoutePaths.onboarding,
+        pageBuilder: (context, state) =>
+          const MaterialPage(child: OnboardingScreen()),
+      ),
+      GoRoute(
+        path: RoutePaths.auth,
+        pageBuilder: (context, state) =>
+          const MaterialPage(child: LoginScreen()),
+      ),
+      GoRoute(
+        path: RoutePaths.home,
+        pageBuilder: (context, state) =>
+          const MaterialPage(child: MainScreen()),
       ),
       // Добавьте остальные маршруты здесь
       // Пример:

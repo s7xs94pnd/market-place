@@ -1,5 +1,5 @@
 // lib/domain/usecases/check_start_destination_usecase.dart
-import '../../core/navigation/start_destination.dart';
+import '../../core/enums/start_destination.dart';
 import '../repositories/local_storage_repository.dart';
 
 /// UseCase для определения стартового экрана после Splash
@@ -16,14 +16,15 @@ class CheckStartDestinationUseCase {
   CheckStartDestinationUseCase(this.repository);
 
   Future<StartDestination> call() async {
-    final isFirstLaunch = await repository.getIsFirstLaunch();
-    if (isFirstLaunch) return StartDestination.onboarding;
+    final boardingCompleted = await repository.getBoardingCompleted();
+    if (!boardingCompleted) {
+      return StartDestination.onboarding;
+    }
 
-    final token = await repository.getAuthToken();
-    if (token != null) return StartDestination.homeUser;
-
-    final isGuest = await repository.getIsGuest();
-    if (isGuest) return StartDestination.homeGuest;
+    final token = await repository.getToken();
+    if (token != null && token.isNotEmpty) {
+      return StartDestination.homeUser;
+    }
 
     return StartDestination.auth;
   }

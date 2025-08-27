@@ -1,10 +1,12 @@
 // lib/core/providers/providers.dart
 import 'package:flutter/cupertino.dart';
 import 'package:riverpod/riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:kazan/app/router.dart';
+import 'package:kazan/core/services/navigation_service.dart';
 import 'package:kazan/data/repositories/local_storage_repository_impl.dart';
 import 'package:kazan/domain/repositories/local_storage_repository.dart';
 import 'package:kazan/domain/usecases/check_start_destination_usecase.dart';
-import '../navigation/navigation_service.dart';
 
 /// Провайдеры зависимостей приложения
 ///
@@ -43,3 +45,9 @@ final navigatorKeyProvider = Provider<GlobalKey<NavigatorState>>(
 final navigationServiceProvider = Provider<NavigationService>(
   (ref) => NavigationService(ref.read(navigatorKeyProvider)),
 );
+
+// Роутер (единый инстанс через провайдер)
+final routerProvider = Provider<GoRouter>((ref) {
+  final navigatorKey = ref.read(navigatorKeyProvider);
+  return createRouter(navigatorKey);
+});

@@ -1,6 +1,7 @@
-// lib/features/splash/presentation/views/splash_screen.dart
+// lib/features/splash/splash_screen.dart
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kazan/features/splash/splash_viewmodel.dart';
 import 'package:lottie/lottie.dart';
 
@@ -38,13 +39,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.asset(
-              'assets/animations/splash1.json',
-              width: double.infinity,
-              height: 300,
-              fit: BoxFit.cover,
-              repeat: true,
-            ),
+            SvgPicture.asset('assets/images/logo.svg', width: 200, height: 300),
             const SizedBox(height: 20),
             const CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.red),

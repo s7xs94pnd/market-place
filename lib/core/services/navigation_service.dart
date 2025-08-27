@@ -1,8 +1,8 @@
 // lib/core/services/navigation_service.dart
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kazan/core/navigation/route_paths.dart';
-import 'package:kazan/core/navigation/start_destination.dart';
+import 'package:kazan/core/constants/route_paths.dart';
+import 'package:kazan/core/enums/start_destination.dart';
 
 /// Сервис навигации для инкапсуляции логики переходов между экранами
 ///
@@ -53,3 +53,5 @@ class NavigationService {
     return state.uri.queryParameters['guest'] == 'true';
   }
 }
+
+
