@@ -28,8 +28,8 @@ class SplashViewModel extends StateNotifier<AsyncValue<StartDestination>> {
 
   Future<void> checkDestination() async {
     try {
-      // Минимальная задержка для показа анимации (2 секунды)
-      await Future.delayed(const Duration(seconds: 4));
+      // Минимальная задержка для показа анимации (1 секунды)
+      await Future.delayed(const Duration(seconds:1));
 
       // Псевдо-инициализация хранилища: запишем тестовые значения при первом запуске
       // Это поможет протестировать навигацию
@@ -50,7 +50,7 @@ class SplashViewModel extends StateNotifier<AsyncValue<StartDestination>> {
 
   Future<void> _seedDummyDataIfNeeded() async {
     // Ничего не перезаписываем, если уже есть какой-либо токен или флаг онбординга выставлен
-    final boarding = await repository.getBoardingCompleted();
+    await repository.getBoardingCompleted();
     await repository.getToken();
 
     // Пример: если онбординг ещё не отмечен, можно выставить false (не пройден)
@@ -62,9 +62,15 @@ class SplashViewModel extends StateNotifier<AsyncValue<StartDestination>> {
     }
 */
 
-    // Для демонстрации можно раскомментировать для авторизованного сценария:
-    await repository.setBoardingCompleted(true);
-    await repository.setToken('dummy_token');
+    // Для демонстрации DEV можно раскомментировать один из сценариев:
+    // 1) Онбординг не пройден:
+    await repository.setBoardingCompleted(false);
+    // 2) Онбординг пройден и есть токен:
+    // await repository.setBoardingCompleted(true);
+    // await repository.setToken('dummy_token');
+    // 3) Онбординг пройден, токена нет:
+    // await repository.setBoardingCompleted(true);
+    // await repository.setToken(null);
   }
 }
 
