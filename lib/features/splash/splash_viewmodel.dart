@@ -1,9 +1,9 @@
 import 'package:riverpod/riverpod.dart';
-import 'package:kazan/domain/usecases/check_start_destination_usecase.dart';
-import 'package:kazan/core/services/navigation_service.dart';
-import 'package:kazan/core/enums/start_destination.dart';
-import 'package:kazan/core/providers/providers.dart';
-import 'package:kazan/domain/repositories/local_storage_repository.dart';
+import 'package:marketplace/domain/usecases/check_start_destination_usecase.dart';
+import 'package:marketplace/core/services/navigation_service.dart';
+import 'package:marketplace/core/enums/start_destination.dart';
+import 'package:marketplace/core/providers/providers.dart';
+import 'package:marketplace/domain/repositories/local_storage_repository.dart';
 
 /// ViewModel для экрана Splash
 ///

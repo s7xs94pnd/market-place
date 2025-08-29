@@ -1,6 +1,6 @@
 {
-    "name": "kazan",
-    "short_name": "kazan",
+    	"name": "marketplace",
+	"short_name": "marketplace",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

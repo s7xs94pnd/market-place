@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kazan/core/theme/app_colors.dart';
+import 'package:marketplace/core/theme/app_colors.dart';
 
 /// Production-тема: светлая/тёмная с единым ColorScheme и типографикой
 class AppTheme {

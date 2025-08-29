@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kazan/core/constants/route_paths.dart';
-import 'package:kazan/features/splash/splash_screen.dart';
-import 'package:kazan/features/onboarding/onboarding_screen.dart';
-import 'package:kazan/features/auth/login_screen.dart';
-import 'package:kazan/features/home/main_screen.dart';
+import 'package:marketplace/core/constants/route_paths.dart';
+import 'package:marketplace/features/splash/splash_screen.dart';
+import 'package:marketplace/features/onboarding/onboarding_screen.dart';
+import 'package:marketplace/features/auth/login_screen.dart';
+import 'package:marketplace/features/home/main_screen.dart';
 
 /// Конфигурация маршрутизации приложения
 ///

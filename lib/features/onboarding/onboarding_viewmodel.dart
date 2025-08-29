@@ -1,7 +1,7 @@
 import 'package:riverpod/riverpod.dart';
-import 'package:kazan/core/services/navigation_service.dart';
-import 'package:kazan/domain/repositories/local_storage_repository.dart';
-import 'package:kazan/core/providers/providers.dart';
+import 'package:marketplace/core/services/navigation_service.dart';
+import 'package:marketplace/domain/repositories/local_storage_repository.dart';
+import 'package:marketplace/core/providers/providers.dart';
 
 class OnboardingState {
   final int currentPageIndex;
