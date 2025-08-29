@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:kazan/core/providers/providers.dart';
+import 'package:kazan/core/theme/app_theme.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));
@@ -15,7 +16,8 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp.router(
       routerConfig: router,
-      theme: ThemeData(primarySwatch: Colors.red, useMaterial3: true),
+      theme: AppTheme.light(),
+      darkTheme: AppTheme.dark(),
       debugShowCheckedModeBanner: false,
     );
   }
