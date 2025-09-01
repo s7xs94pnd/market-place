@@ -1,4 +1,4 @@
-package com.example.kazan
+package com.example.marketplace
 
 import io.flutter.embedding.android.FlutterActivity
 

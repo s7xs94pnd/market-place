@@ -2,11 +2,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kazan/app/router.dart';
-import 'package:kazan/core/services/navigation_service.dart';
-import 'package:kazan/data/repositories/local_storage_repository_impl.dart';
-import 'package:kazan/domain/repositories/local_storage_repository.dart';
-import 'package:kazan/domain/usecases/check_start_destination_usecase.dart';
+import 'package:marketplace/app/router.dart';
+import 'package:marketplace/core/services/navigation_service.dart';
+import 'package:marketplace/data/repositories/local_storage_repository_impl.dart';
+import 'package:marketplace/domain/repositories/local_storage_repository.dart';
+import 'package:marketplace/domain/usecases/check_start_destination_usecase.dart';
 
 /// Провайдеры зависимостей приложения
 ///
