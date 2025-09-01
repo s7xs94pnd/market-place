@@ -1,4 +1,5 @@
 // lib/core/services/navigation_service.dart
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:marketplace/core/constants/route_paths.dart';
@@ -24,6 +25,42 @@ class NavigationService {
   void navigateToOnboarding() => context.go(RoutePaths.onboarding);
 
   void navigateToAuth() => context.go(RoutePaths.auth);
+  
+  void navigateToRegistration() => context.go(RoutePaths.registration);
+  
+  void navigateToLogin() => context.go(RoutePaths.login);
+  
+  void navigateToVerification({
+    required String phone,
+    required String name,
+    File? image,
+    required bool isRegistration,
+  }) {
+    final queryParams = {
+      'phone': phone,
+      'name': name,
+      'isRegistration': isRegistration.toString(),
+    };
+    if (image != null) {
+      queryParams['imagePath'] = image.path;
+    }
+    
+    final uri = Uri(path: RoutePaths.verification, queryParameters: queryParams);
+    context.go(uri.toString());
+  }
+
+  void navigateToSuccess({
+    required String name,
+    required bool isRegistration,
+  }) {
+    final queryParams = {
+      'name': name,
+      'isRegistration': isRegistration.toString(),
+    };
+    
+    final uri = Uri(path: RoutePaths.success, queryParameters: queryParams);
+    context.go(uri.toString());
+  }
 
   void navigateToHome({bool isGuest = false}) {
     final path = isGuest ? '${RoutePaths.home}?guest=true' : RoutePaths.home;

@@ -12,6 +12,10 @@ abstract class RoutePaths {
   static const String splash = '/splash';
   static const String onboarding = '/onboarding';
   static const String auth = '/auth';
+  static const String registration = '/registration';
+  static const String login = '/login';
+  static const String verification = '/verification';
+  static const String success = '/success';
   static const String home = '/home';
 
   // Пример динамического пути:

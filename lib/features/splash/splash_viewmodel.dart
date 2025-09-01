@@ -64,13 +64,13 @@ class SplashViewModel extends StateNotifier<AsyncValue<StartDestination>> {
 
     // Для демонстрации DEV можно раскомментировать один из сценариев:
     // 1) Онбординг не пройден:
-    await repository.setBoardingCompleted(false);
+    // await repository.setBoardingCompleted(false);
     // 2) Онбординг пройден и есть токен:
     // await repository.setBoardingCompleted(true);
     // await repository.setToken('dummy_token');
     // 3) Онбординг пройден, токена нет:
-    // await repository.setBoardingCompleted(true);
-    // await repository.setToken(null);
+    await repository.setBoardingCompleted(true);
+    await repository.setToken(null);
   }
 }
 

@@ -3,7 +3,11 @@ import 'package:go_router/go_router.dart';
 import 'package:marketplace/core/constants/route_paths.dart';
 import 'package:marketplace/features/splash/splash_screen.dart';
 import 'package:marketplace/features/onboarding/onboarding_screen.dart';
-import 'package:marketplace/features/auth/login_screen.dart';
+import 'package:marketplace/features/auth/auth_screen.dart';
+import 'package:marketplace/features/auth/login/login_screen.dart';
+import 'package:marketplace/features/auth/registration/registration_screen.dart';
+import 'package:marketplace/features/auth/verification/verification_screen.dart';
+import 'package:marketplace/features/auth/success/success_screen.dart';
 import 'package:marketplace/features/home/main_screen.dart';
 
 /// Конфигурация маршрутизации приложения
@@ -37,7 +41,27 @@ GoRouter createRouter(GlobalKey<NavigatorState> navigatorKey) {
       GoRoute(
         path: RoutePaths.auth,
         pageBuilder: (context, state) =>
+          const MaterialPage(child: AuthScreen()),
+      ),
+      GoRoute(
+        path: RoutePaths.registration,
+        pageBuilder: (context, state) =>
+          const MaterialPage(child: RegistrationScreen()),
+      ),
+      GoRoute(
+        path: RoutePaths.login,
+        pageBuilder: (context, state) =>
           const MaterialPage(child: LoginScreen()),
+      ),
+      GoRoute(
+        path: RoutePaths.verification,
+        pageBuilder: (context, state) =>
+          const MaterialPage(child: VerificationScreen()),
+      ),
+      GoRoute(
+        path: RoutePaths.success,
+        pageBuilder: (context, state) =>
+          const MaterialPage(child: SuccessScreen()),
       ),
       GoRoute(
         path: RoutePaths.home,
