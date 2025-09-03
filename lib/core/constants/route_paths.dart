@@ -17,6 +17,11 @@ abstract class RoutePaths {
   static const String verification = '/verification';
   static const String success = '/success';
   static const String home = '/home';
+  static const String search = '/search';
+  static const String product = '/product';
+  static const String category = '/category';
+  static const String brand = '/brand';
+  static const String seeAll = '/see_all';
 
   // Пример динамического пути:
   // static const String userProfile = '/user/:userId';

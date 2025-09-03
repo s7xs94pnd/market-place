@@ -6,7 +6,6 @@ import 'package:marketplace/features/splash/splash_viewmodel.dart';
 
 /// Экран загрузки приложения
 ///
-/// Для стажеров:
 /// 1. Экран наследует от ConsumerStatefulWidget для работы с Riverpod
 /// 2. В initState запускается процесс определения следующего экрана
 /// 3. В build отображается UI и слушаются изменения состояния
@@ -39,10 +38,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset('assets/images/logo.svg', width: 200, height: 300),
-            const SizedBox(height: 20),
-            const CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-            ),
             const SizedBox(height: 20),
             // Показать состояние загрузки или ошибки
             state.maybeWhen(

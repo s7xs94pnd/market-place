@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:marketplace/core/services/navigation_service.dart';
 import 'package:marketplace/core/providers/providers.dart';

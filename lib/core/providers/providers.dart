@@ -1,6 +1,6 @@
 // lib/core/providers/providers.dart
 import 'package:flutter/cupertino.dart';
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:marketplace/app/router.dart';
 import 'package:marketplace/core/services/navigation_service.dart';

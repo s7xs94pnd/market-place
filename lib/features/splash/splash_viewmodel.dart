@@ -1,4 +1,4 @@
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:marketplace/domain/usecases/check_start_destination_usecase.dart';
 import 'package:marketplace/core/services/navigation_service.dart';
 import 'package:marketplace/core/enums/start_destination.dart';

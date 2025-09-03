@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Глобальное состояние аутентификации для сохранения данных между экранами
 class GlobalAuthState {

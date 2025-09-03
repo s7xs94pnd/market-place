@@ -1,4 +1,4 @@
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:marketplace/core/services/navigation_service.dart';
 import 'package:marketplace/core/providers/providers.dart';
 
@@ -9,7 +9,6 @@ class AuthState {
 
 /// ViewModel для экрана авторизации
 ///
-/// Для стажеров:
 /// 1. ViewModel содержит бизнес-логику экрана
 /// 2. Наследуется от StateNotifier для управления состоянием
 /// 3. Использует NavigationService для навигации

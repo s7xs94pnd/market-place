@@ -8,7 +8,10 @@ import 'package:marketplace/features/auth/login/login_screen.dart';
 import 'package:marketplace/features/auth/registration/registration_screen.dart';
 import 'package:marketplace/features/auth/verification/verification_screen.dart';
 import 'package:marketplace/features/auth/success/success_screen.dart';
-import 'package:marketplace/features/home/main_screen.dart';
+import 'package:marketplace/features/home/home_screen.dart';
+import 'package:marketplace/features/search/search_screen.dart';
+import 'package:marketplace/features/home/placeholders.dart';
+import 'package:marketplace/features/see_all/see_all_screen.dart';
 
 /// Конфигурация маршрутизации приложения
 ///
@@ -66,7 +69,59 @@ GoRouter createRouter(GlobalKey<NavigatorState> navigatorKey) {
       GoRoute(
         path: RoutePaths.home,
         pageBuilder: (context, state) =>
-          const MaterialPage(child: MainScreen()),
+          const MaterialPage(child: HomeScreen()),
+      ),
+      GoRoute(
+        path: RoutePaths.search,
+        pageBuilder: (context, state) =>
+          const MaterialPage(child: SearchScreen()),
+      ),
+      GoRoute(
+        path: RoutePaths.product,
+        pageBuilder: (context, state) {
+          final id = state.uri.queryParameters['id'] ?? '';
+          return MaterialPage(child: ProductScreen(id: id));
+        },
+      ),
+      GoRoute(
+        path: RoutePaths.category,
+        pageBuilder: (context, state) {
+          final id = state.uri.queryParameters['id'] ?? '';
+          return MaterialPage(child: CategoryScreen(id: id));
+        },
+      ),
+      GoRoute(
+        path: RoutePaths.brand,
+        pageBuilder: (context, state) {
+          final id = state.uri.queryParameters['id'] ?? '';
+          return MaterialPage(child: BrandScreen(id: id));
+        },
+      ),
+      GoRoute(
+        path: RoutePaths.seeAll,
+        pageBuilder: (context, state) {
+          final type = state.uri.queryParameters['type'] ?? '';
+          String title = 'Товары';
+          
+          switch (type) {
+            case 'popular':
+              title = 'Популярные товары';
+              break;
+            case 'recommended':
+              title = 'Рекомендуем вам';
+              break;
+            case 'sale':
+              title = 'Скидки';
+              break;
+          }
+          
+          return MaterialPage(
+            child: SeeAllScreen(
+              type: type,
+              title: title,
+            ),
+          );
+        },
       ),
       // Добавьте остальные маршруты здесь
       // Пример:

@@ -21,6 +21,8 @@ dependencies:
   riverpod_annotation: ^2.6.1
   lottie: ^3.3.1
   go_router: ^16.2.0
+  cached_network_image: ^3.3.1
+  connectivity_plus: ^6.0.3
   shared_preferences: ^2.2.3   # ⚠️ у тебя было ^2.5.3, такой версии нет
   flutter_svg: ^2.2.0
   flutter_secure_storage: ^9.2.2

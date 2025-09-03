@@ -5,7 +5,6 @@ import 'package:marketplace/features/auth/verification/verification_viewmodel.da
 
 /// Экран верификации
 ///
-/// Для стажеров:
 /// 1. Экран наследует от ConsumerStatefulWidget для работы с Riverpod
 /// 2. В build отображается UI и слушаются изменения состояния
 /// 3. Добавление новой UI-логики:
